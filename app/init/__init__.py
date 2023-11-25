@@ -23,5 +23,9 @@ def handle_json_file(file_path_input, file_path_output: str):
             f.write(','.join(line) + '\n')
 
 
+def check_an_create_folder(folder_path):
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+
+
 os.environ["OPENAI_API_KEY"] = OPEN_API_KEY
-handle_json_file('app/resources/data.json', 'app/resources/data_processed.txt')
