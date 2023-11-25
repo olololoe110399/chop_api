@@ -1,4 +1,4 @@
 export PYTHONPATH=$(pwd)
 
-streamlit run app/Demo.py --server.port 5001
+streamlit run Demo.py --server.port 5001
 

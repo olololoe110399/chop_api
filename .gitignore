@@ -53,8 +53,6 @@ Thumbs.db
 
 .fake
 
-# Streamlit
-.streamlit/secrets.toml
 
 # resources
-app/resources/
+resources/

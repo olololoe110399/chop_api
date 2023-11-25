@@ -1,8 +1,6 @@
 import json
 import os
 
-from app.core.config import OPEN_API_KEY
-
 
 def handle_json_file(file_path_input, file_path_output: str):
     with open(file_path_input) as f:
@@ -16,11 +14,8 @@ def handle_json_file(file_path_input, file_path_output: str):
                     continue
                 if value is None or value == '':
                     continue
-                elif isinstance(value, bool):
-                    line.append(f'{key}: {value}')
-                else:
-                    line.append(str(value).replace('\n', ' '))
-            f.write(','.join(line) + '\n')
+                line.append(f"{key}: {str(value)} ")
+            f.write(','.join(line).replace('\n', '') + '\n')
 
 
 def check_an_create_folder(folder_path):
@@ -28,4 +23,3 @@ def check_an_create_folder(folder_path):
         os.makedirs(folder_path)
 
 
-os.environ["OPENAI_API_KEY"] = OPEN_API_KEY

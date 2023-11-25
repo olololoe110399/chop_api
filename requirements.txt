@@ -6,3 +6,7 @@ starlette
 jq
 faiss-cpu
 tiktoken
+# chromadb
+# streamlit_tree_select
+# pysqlite3
+# pysqlite3-binary
