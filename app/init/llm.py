@@ -21,11 +21,11 @@ class LLM:
             model_name="gpt-3.5-turbo-16k",
             streaming=True,
         )
-        # self.conversation_memory = ConversationBufferMemory(
-        #     return_messages=True,
-        #     memory_key='chat_history',
-        #     input_key='question',
-        # )
+        self.conversation_memory = ConversationBufferMemory(
+            return_messages=True,
+            memory_key='chat_history',
+            input_key='question',
+        )
         with open("app/resources/system_message.txt", "r") as file:
             self.system_message = file.read()
 
@@ -44,7 +44,7 @@ class LLM:
             llm=self.llm,
             retriever=vectorstore.as_retriever(),
             verbose=True,
-            # memory=self.conversation_memory,
+            memory=self.conversation_memory,
             condense_question_prompt=prompt
         )
         custom_logger.info(f'conversation_retrieval_chain')

@@ -4,5 +4,5 @@ langchain
 loguru
 starlette
 jq
-streamlit_chat
 faiss-cpu
+tiktoken
